@@ -1,4 +1,5 @@
-CREATE DATABASE HubaDmitryTITpv22
+CREATE DATABASE HubaDmitryTITpv22;
+
 --tabeli loomine
 --primaty key - дает уникальное значение
 USE HubaDmitryTITpv22;
@@ -15,5 +16,40 @@ select * from oppeaine
 INSERT INTO oppeaine(nimetus, kestvus, algus_kuupaev, kirjeldus)
 
 VALUES (
-'Matemaatka', 200, '2024-04-9', 'Üldainete moodul');
+'Fizkultura', 200, '2024-04-9', 'Üldhariduse moodul');
 select * from oppeaine
+
+--Tabeli Opetaja
+CREATE DATABASE HubaDmitryTITpv22;
+
+--tabeli loomine
+--primaty key - дает уникальное значение
+USE HubaDmitryTITpv22;
+CREATE TABLE opetaja(
+opetajaID int Primary key identity (1,1),
+eesnimi varchar(50), 
+perenimi varchar(50) NOT NULL,
+suniaeg date,
+kontakt varchar(50));
+--Kuva/ Näita tabeli
+select * from opetaja
+
+--Andmete lisamine tabeli sisse
+INSERT INTO opetaja(eesnimi, perenimi, kontakt)
+VALUES (
+'Idk', 'Who', '12345678');
+select * from opetaja
+
+UPDATE opetaja SET suniaeg='1999-10-10'
+WHERE opetajaID=1;
+
+--tabeli muutmine veergu lisamine
+ALTER TABLE oppeaine ADD opetajaID int;
+SELECT * FROM oppeaine;
+SELECT * FROM opetaja;
+
+UPDATE oppeaine SET opetajaID=1;
+--foreign key lisamine tabeli sisse
+
+ALTER TABLE oppeaine
+ADD FOREIGN KEY (opetajaID) REFERENCES opetaja(opetajaID);
