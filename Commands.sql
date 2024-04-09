@@ -16,6 +16,7 @@ select * from oppeaine
 INSERT INTO oppeaine(nimetus, kestvus, algus_kuupaev, kirjeldus)
 
 VALUES (
+<<<<<<< HEAD:Commands.txt
 'Fizkultura', 200, '2024-04-9', 'Üldhariduse moodul');
 select * from oppeaine
 
@@ -53,3 +54,7 @@ UPDATE oppeaine SET opetajaID=1;
 
 ALTER TABLE oppeaine
 ADD FOREIGN KEY (opetajaID) REFERENCES opetaja(opetajaID);
+=======
+'Matemaatka', 200, '2024-04-9', 'Üldainete moodul');
+select * from oppeaine
+>>>>>>> 14f9e72e56d3c0fc4097f1e410ce1aaafdccdd62:Commands.sql
