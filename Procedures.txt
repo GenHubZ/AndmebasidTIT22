@@ -1,0 +1,113 @@
+CREATE TABLE tootaja
+CREATE PROCEDURE tootajaLisamine2
+
+@uusnimi varchar(25),
+@uusperenimi varchar(25)
+AS
+BEGIN
+	INSERT INTO tootaja(eesnimi, perekoonanimi)
+	VALUES (@uusnimi, @uusPerenimi);
+	SELECT * from tootaja;
+END
+
+ALTER PROCEDURE [dbo].[tootajaLisamine2]
+@kood char(11),
+@uusnimi varchar(25),
+@uusperenimi varchar(25)
+AS
+BEGIN
+	INSERT INTO tootaja(eesnimi, perekoonanimi, isikukood)
+	VALUES (@uusnimi, @uusPerenimi, @kood);
+	SELECT * from tootaja;
+END
+
+EXEC tootajaLisamine2'TEST4', 'TEST5', '123456789';
+
+SELECT * FROM tootaja
+
+CREATE TABLE tootaja(
+tootajaID INT PRIMARY KEY identity(1,1),
+eesnimi varchar(20),
+perekoonanimi varchar(20),
+isikukood varchar(11) UNIQUE
+)
+SELECT * FROM tootaja;
+
+INSERT INTO tootaja(eesnimi, perekoonanimi, isikukood)
+VALUES ('Dmitry', 'Huba', '12345678912');
+SELECT * FROM tootaja;
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Tome', 'Graser', '51079-812');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Eugenius', 'Brambell', '35356-803');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Holt', 'Luddy', '51060-069');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Drona', 'Borkett', '64117-179');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Olav', 'Bleiman', '30142-335');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Susanna', 'Bernardinelli', '59417-107');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Nadeen', 'Cromack', '41190-296');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Barnard', 'Hexham', '61919-010');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Cybill', 'Chasson', '68788-9950');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Janaye', 'Leggitt', '64679-902');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Vonni', 'Vannar', '64893-802');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Delmor', 'Rosoni', '59970-054');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Wilmette', 'Feldbrin', '0406-9925');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Gabriele', 'MacAllaster', '52685-342');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Karola', 'MacMenamie', '54575-457');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Marillin', 'Quantrill', '11673-358');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Chic', 'Masterton', '98132-724');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Saudra', 'Beddo', '42884-442');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Trudy', 'Mushett', '66993-534');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Maxi', 'Mityukov', '59970-049');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Kat', 'Abelovitz', '51346-218');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Marmaduke', 'Van', '11410-162');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Evey', 'Severy', '54868-6320');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Jami', 'Linnit', '64117-263');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Arnie', 'Piser', '0591-0338');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Mordy', 'Varndall', '64064-002');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Biddie', 'MacGorrie', '45802-995');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Lem', 'de Amaya', '64679-941');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Halie', 'Ogbourne', '54868-5975');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Price', 'Waddilove', '13537-462');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Milly', 'Keelinge', '0093-4821');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Lanna', 'Aleevy', '66302-310');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Townsend', 'Paunton', '49643-356');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Genna', 'Pennigar', '47335-860');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Wilmette', 'Fetherby', '60760-287');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Shayne', 'Winfield', '49288-0158');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Gwendolin', 'Toffel', '33261-648');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Blakelee', 'Lancashire', '49288-0393');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Arron', 'Bettinson', '0178-0465');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Reece', 'Zarfati', '64205-821');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Lucias', 'Luquet', '54569-2140');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Cassie', 'Newis', '51021-910');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Cassy', 'Twinterman', '52389-639');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Orren', 'Oty', '0268-1517');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Melicent', 'Vonderdell', '69103-3501');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Tamas', 'Gianni', '21749-750');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Moina', 'Halfhead', '62011-0211');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Roseanna', 'Alderson', '42571-105');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Ilise', 'Service', '24090-681');
+insert into tootaja (eesnimi, perekoonanimi, isikukood) values ('Dall', 'Bondley', '64942-1118');
+
+CREATE PROCedure tootajaUuendus
+@uusperenimi varchar(25),
+@id int
+as
+begin
+
+update tootaja SET perekoonanimi=@uusperenimi
+where tootajaID=@id;
+select * from tootaja
+
+end
+
+EXEC tootajaUuendus 'TEST', 1;
+
+CREATE PROCEDURE tootajaKustuta
+@id int
+as
+BEGIN
+	DELETE FROM tootaja
+	where tootajaID=@id;
+	select * from tootaja;
+END
+
+exec tootajaKustuta '1';
