@@ -1,0 +1,91 @@
+BEGIN
+DECLARE variable1 INT;
+SET variable1 = param1 + 1;
+	IF variable1 = 0 THEN
+    	SELECT variable1;
+	END IF;
+	IF param1 = 0 THEN
+		SELECT 'Parameter value = 0';
+	ELSE
+		SELECT 'Paramenter value <> 0';
+	END IF;
+END
+
+BEGIN
+	CASE str 
+    WHEN "sum1"
+    THEN
+    	SELECT kaup, SUM(hind) as "sum1"
+        FROM kaup
+        group by kaup
+        HAVING SUM(hind) < 10000;
+    WHEN "sum2"
+    THEN
+    	SELECT kaup, SUM(hind) as "sum2"
+        FROM kaup
+        group by kaup
+        HAVING SUM(hind) >= 15000;
+    END CASE;
+END
+
+CREATE PROCEDURE TEST1
+@param1 INT
+AS
+BEGIN
+    DECLARE @variable1 INT;
+    SET @variable1 = @param1 + 1;
+
+    IF @variable1 = 0
+    BEGIN
+        SELECT @variable1;
+    END
+
+    IF @param1 = 0
+    BEGIN
+        SELECT 'Parameter value = 0';
+    END
+    ELSE
+    BEGIN
+        SELECT 'Parameter value <> 0';
+    END
+END
+
+EXEC TEST1 3;
+
+CREATE PROCEDURE TEST2
+@str varchar(20)
+AS
+BEGIN
+	IF @str = 'sum1'
+	BEGIN
+		SELECT kaup, SUM(hind) as sum1
+		FROM kaup
+		GROUP BY kaup
+		HAVING SUM(hind) < 10000;
+	END
+	ELSE IF @str = 'sum2'
+	BEGIN
+		SELECT kaup, SUM(hind) as sum2
+		FROM kaup
+		GROUP BY kaup
+		HAVING SUM(hind) >= 15000;
+	END
+END
+
+EXEC TEST2  'sum1';
+
+
+LAST FUNC (DODELAT')
+
+BEGIN
+SELECT * from calculator;
+    IF chose = 1 THEN
+    	SELECT num1 + num2;
+    ELSEIF chose = 2 THEN
+        SELECT num1 - num2;
+    ELSEIF chose = 3 THEN
+        SELECT num1 * num2;
+    ELSEIF chose = 4 THEN
+        SELECT num1 / num2;
+        END IF;
+END
